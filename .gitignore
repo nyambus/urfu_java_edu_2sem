@@ -1,0 +1,10 @@
+**/target/
+**/.idea/
+*.iml
+**/testdb/
+*.mv.db
+*.trace.db
+*.lock.db
+__pycache__/
+*.pyc
+~$*.docx
