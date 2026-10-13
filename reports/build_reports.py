@@ -264,6 +264,11 @@ def build(number, spec):
     report.body("Необходимое ПО: " + spec["software"])
     report.body("Использованные версии: " + spec["versions"])
     report.link(REPO)
+    poms = (["service1/pom.xml", "service2/pom.xml"] if number == 4 else ["pom.xml"])
+    for name in poms:
+        path = f"{spec['folder']}/{name}"
+        report.body("Конфигурация сборки: " + path)
+        report.link(REPO + "/blob/main/" + path)
     report.body("Номер в списке группы — 10 (чётный). Значения и ответы в таблицах ниже ожидаемые; подлинные результаты фиксируются при запуске. Скриншоты не создавались автоматически.")
 
     files = relevant_files(spec["folder"])
